@@ -45,16 +45,26 @@ const addToUsersBox = function (userName) {
 //call 
 newUserConnected();
 
-//when a new user event is detected
+// When a new user event is detected
 socket.on("new user", function (data) {
-  data.map(function (user) {
-          return addToUsersBox(user);
-      });
+  data.map(function (userName) {
+    return addToUsersBox(userName);
+  });
+  addToUsersBox(userName);
+
+  // Notify other users in the chat
+  addNewMessage({ user: "System", message: `${userName} has joined the chat.` });
 });
 
 //when a user leaves
 socket.on("user disconnected", function (userName) {
-  document.querySelector(`.${userName}-userlist`).remove();
+  const userElement = document.querySelector(`.${userName}-userlist`);
+  if (userElement) {
+    userElement.remove();
+  }
+
+  // Notify other users in the chat
+  addNewMessage({ user: "System", message: `${userName} has left the chat.` });
 });
 
 
