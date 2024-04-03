@@ -1,37 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/demo.css">
+    <script src="https://kit.fontawesome.com/841930c90f.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="/images/faviconAC.ico">
     <title>Socket.io simple chat</title>
-    <link rel="stylesheet" href="/css/demo.css" />
   </head>
   <body>
+    <body>
     <div class="sidenav">
         <div class="inbox__people">
             <h4>Active users</h4>
           </div>
 
-      </div>
+    </div>
       
       
-      <br>
-      <hr>
-      <div class="content">
-        <div class="messages__history"></div>
-          <div class="fallback"></div>
-        <div class="inbox__messages">
+    <br>
+    <hr>
+    <div class="content">
+      <div class="messages__history"></div>
+      <div class="fallback"></div>
+      <div class="inbox__messages">
             
           
-        </div>
-
-        <form class="message_form">
-            <input type="text" class="message_form__input" placeholder="Type a message" />
-            <button class="message_form__button" type="submit">
-              Enter
-            </button>
-          </form>
       </div>
+
+      <form class="message_form">
+          <input type="text" class="message_form__input" placeholder="Type a message" />
+          <button class="message_form__button" type="submit">
+              Enter
+          </button>
+      </form>
+    </div>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/client.js"></script>

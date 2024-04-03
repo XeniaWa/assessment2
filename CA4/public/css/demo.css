@@ -35,6 +35,10 @@ body {
   display: block;
 }
 
+.content{
+  position: fixed;
+  left: 15%;
+}
 
 /* CSS for buttons created by https://codepen.io/ash_creator/pen/oNyNbNO */
 
